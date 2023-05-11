@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML CSS Cheat Sheet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>André's Cheat Sheet</h1>
+  </header>
+  <main>
+    <h2>CSS Selectors</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Selector</th>
+          <th>Example</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nowrap">Type</td>
+          <td class="nowrap">
+            <span class="code">
+              p {
+                color: green;
+              }
+            </span>
+          </td>
+          <td>Matches the type of the element.</td>
+        </tr>
+        <tr>
+          <td class="nowrap">Universal</td>
+          <td class="nowrap">
+            <span class="code">
+              * {
+                font-family: Verdana;
+              }
+            </span>
+          </td>
+          <td>The universal selector selects all elements of any type.</td>
+        </tr>
+        <tr>
+          <td class="nowrap">Class</td>
+          <td class="nowrap">
+            <span class="code">
+              .title {
+                color: teal;
+              }
+            </span>
+          </td>
+          <td>In the example, the class is <span class="code">title</span>, so the CSS selector for it is <span class="code">.title</span>.</td>
+        </tr>
+        <tr>
+          <td class="nowrap">ID</td>
+          <td class="nowrap">
+            <span class="code">
+              #article-title {
+                font-family: cursive;
+              }
+            </span>
+          </td>
+          <td>The <span class="code">id</span> name is <span class="code">large-title</span>, therefore the CSS selector for it is <span class="code">#large-title</span>.</td>
+        </tr>
+        <tr>
+          <td class="nowrap">Attribute</td>
+          <td class="nowrap">
+            <span class="code">
+              [href]{
+                color: magenta;
+              }
+            </span>
+          </td>
+          <td>In the example: <span class="code">[href]</span> would target all elements with an <span class="code">href</span> attribute and set the <span class="code">color</span> to <span class="code">magenta</span>.</td>
+        </tr>
+        <tr>
+          <td class="nowrap"></td>
+          <td class="nowrap">
+            <span class="code">
+              img[src*='winter'] {
+                height: 50px;
+              }
+            </span>
+          </td>
+          <td>The ruleset looks for an <span class="code">img</span> element with an attribute of <span class="code">src</span> that contains the string <span class="code">'winter'</span>, and sets the <span class="code">height</span> to <span class="code">50px</span>.</td>
+        </tr>
+        <tr>
+          <td class="nowrap">Pseudo-class</td>
+          <td class="nowrap">
+            <span class="code">
+              p:hover {
+                background-color: lime;
+              }
+            </span>
+          </td>
+          <td>In the example, whenever the mouse hovers over a paragraph element, that paragraph will have a lime-colored background.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>CSS Specificity</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>HTML</th>
+          <th>CSS</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Specificity</td>
+          <td>
+            <span class="code">
+              &lt;h1 class='headline'&gt;Breaking News&lt;/h1&gt;
+            </span>
+          </td>
+          <td>
+            <span class="code">
+              h1 {
+                color: red;
+              }
+
+              .headline {
+                color: firebrick;
+              }
+            </span>
+          </td>
+          <td>In the example code, the color of the heading would be set to firebrick, as the class selector is more specific than the type selector.</td>
+        </tr>
+        <tr>
+          <td>Chaining</td>
+          <td>
+            <span class="code">
+              &lt;h1 class='special'&gt;Special Heading&lt;/h1&gt;
+            </span>
+          </td>
+          <td>
+            <span class="code">
+              h1.special {
+                font-family: Tahoma;
+              }
+            </span>
+          </td>
+          <td>The code would select only the <span class="code">&lt;h1&gt;</span> elements with a class of special. If a <span class="code">&lt;p&gt;</span> element also had a class of special, the rule in the example would not style the paragraph.</td>
+        </tr>
+        <tr>
+          <td>Descendant Combinator</td>
+          <td>
+            <span class="code">
+              &lt;ul class='main-list'&gt;
+                &lt;li&gt;1&lt;/li&gt;
+                &lt;li&gt;2&lt;/li&gt;
+                &lt;li&gt;3&lt;/li&gt;
+              &lt;/ul&gt;
+            </span>
+          </td>
+          <td>
+            <span class="code">
+              .main-list li {
+                font-weight: bold;
+              }
+            </span>
+          </td>
+          <td>In the example above, <span class="code">.main-list</span> selects the element with the <span class="code">.main-list</span> class (the <span class="code">&lt;ul&gt;</span> element). The descendant <span class="code">&lt;li&gt;</span>‘s are selected by adding <span class="code">li</span> to the selector, separated by a space.</td>
+        </tr>
+        <tr>
+          <td>Chaining and Specificity</td>
+          <td></td>
+          <td>
+            <span class="code">
+              p {
+                color: blue;
+              }
+
+              .main p {
+                color: red;
+              }
+            </span>
+          </td>
+          <td>Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.</td>
+        </tr>
+        <tr>
+          <td>Multiple Selectors</td>
+          <td></td>
+          <td>
+            <span class="code">
+              h1,
+              .menu {
+                font-family: Georgia;
+              }
+            </span>
+          </td>
+          <td>By separating the CSS selectors with a comma, both the <span class="code">&lt;h1&gt;</span> elements and the elements with the <span class="code">menu</span> class will receive the <span class="code">font-family: Georgia</span> styling.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Terminal Commands</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="code">
+              mkdir
+            </span>
+          </td>
+          <td>Creates a new directory in the working directory.</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="code">
+              touch
+            </span>
+          </td>
+          <td>Creates a new file inside the working directory.</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="code">
+              echo
+            </span>
+          </td>
+          <td>Outputs the strings that are passed to it as arguments.</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="code">
+              cat
+            </span>
+          </td>
+          <td>Reads files sequentially, writing them to standard output.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: blue;
+  color: white;
+  padding-bottom: 40px;
+}
+
+h1 {
+  padding-top: 40px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+table {
+  border: 2px solid orange;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+thead {
+  background-color: orange;
+  color: black;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  border-top: 1px solid orange;
+  padding: 10px;
+  line-height: 1.4;
+  height: 46px;
+}
+
+.code {
+  font-family: monospace;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
